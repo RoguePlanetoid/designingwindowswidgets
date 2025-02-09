@@ -1,0 +1,49 @@
+{
+  "type": "AdaptiveCard",
+  "body": [
+    {
+      "type": "TextBlock",
+      "text": "🤖 Generative AI",
+      "weight": "Bolder",
+      "size": "Large"
+    },
+    {
+      "type": "TextBlock",
+      "text": "Generative AI creates new content like text, images, and music by learning from existing data.",
+      "wrap": true,
+      "spacing": "Medium"
+    },
+    {
+      "type": "TextBlock",
+      "text": "✨ Examples:",
+      "weight": "Bolder",
+      "spacing": "Small"
+    },
+    {
+      "type": "FactSet",
+      "facts": [
+        {
+          "title": "📝 Text:",
+          "value": "Essays and poems."
+        },
+        {
+          "title": "🎨 Art:",
+          "value": "Digital paintings."
+        },
+        {
+          "title": "🎶 Music:",
+          "value": "Melodies and songs."
+        }
+      ]
+    },
+    {
+      "type": "TextBlock",
+      "text": "These technologies foster creativity and innovation.",
+      "wrap": true,
+      "spacing": "Medium"
+    }
+  ],
+  "actions": [],
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "version": "1.2"
+}

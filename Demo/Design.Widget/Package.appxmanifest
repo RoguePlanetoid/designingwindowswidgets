@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<Package
+  xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10"
+  xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest"
+  xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10"
+  xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities"
+  xmlns:uap3="http://schemas.microsoft.com/appx/manifest/uap/windows10/3"
+  xmlns:com="http://schemas.microsoft.com/appx/manifest/com/windows10"
+  IgnorableNamespaces="uap rescap uap3">
+
+  <Identity
+    Name="10d39721-aa77-4fe3-a4d2-d82ef2a22f37"
+    Publisher="CN=RoguePlanetoid"
+    Version="1.0.0.0" />
+
+  <mp:PhoneIdentity PhoneProductId="10d39721-aa77-4fe3-a4d2-d82ef2a22f37" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
+
+  <Properties>
+    <DisplayName>Design Widget</DisplayName>
+    <PublisherDisplayName>RoguePlanetoid</PublisherDisplayName>
+    <Logo>Assets\StoreLogo.png</Logo>
+  </Properties>
+
+  <Dependencies>
+    <TargetDeviceFamily Name="Windows.Universal" MinVersion="10.0.17763.0" MaxVersionTested="10.0.19041.0" />
+    <TargetDeviceFamily Name="Windows.Desktop" MinVersion="10.0.17763.0" MaxVersionTested="10.0.19041.0" />
+  </Dependencies>
+
+  <Resources>
+    <Resource Language="x-generate"/>
+  </Resources>
+
+  <Applications>
+    <Application Id="App"
+      Executable="$targetnametoken$.exe"
+      EntryPoint="$targetentrypoint$">
+      <uap:VisualElements	
+		AppListEntry="none"
+        DisplayName="Design Widget"
+        Description="Design Widget"
+        BackgroundColor="transparent"
+        Square150x150Logo="Assets\Square150x150Logo.png"
+        Square44x44Logo="Assets\Square44x44Logo.png">
+        <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png" />
+        <uap:SplashScreen Image="Assets\SplashScreen.png" />
+      </uap:VisualElements>
+		<Extensions>
+			<com:Extension Category="windows.comServer">
+				<com:ComServer>
+					<com:ExeServer Executable="Design.Widget.exe" DisplayName="Design Widget">
+						<com:Class Id="10d39721-aa77-4fe3-a4d2-d82ef2a22f37" DisplayName="Design Widget" />
+					</com:ExeServer>
+				</com:ComServer>
+			</com:Extension>
+			<uap3:Extension Category="windows.appExtension">
+				<uap3:AppExtension Name="com.microsoft.windows.widgets"
+					DisplayName="Design Widget"	Id="DesignWidget" PublicFolder="Public">
+					<uap3:Properties>
+						<WidgetProvider>
+							<ProviderIcons>
+								<Icon Path="Assets\Design_Icon.png" />
+							</ProviderIcons>
+							<Activation>
+								<CreateInstance ClassId="10d39721-aa77-4fe3-a4d2-d82ef2a22f37" />
+							</Activation>
+							<Definitions>
+								<Definition Id="DesignWidget" DisplayName="Design Widget" Description="Design Widget" IsCustomizable="true">
+									<Capabilities>
+										<Capability>
+											<Size Name="small" />
+										</Capability>
+										<Capability>
+											<Size Name="medium" />
+										</Capability>
+										<Capability>
+											<Size Name="large" />
+										</Capability>
+									</Capabilities>
+									<ThemeResources>
+										<Icons>
+											<Icon Path="Assets\Design_Icon.png" />
+										</Icons>
+										<Screenshots>
+											<Screenshot Path="Assets\Design_Screenshot.png" />
+										</Screenshots>
+										<DarkMode />
+										<LightMode />
+									</ThemeResources>
+								</Definition>
+							</Definitions>
+						</WidgetProvider>
+					</uap3:Properties>
+				</uap3:AppExtension>
+			</uap3:Extension>
+		</Extensions>
+    </Application>
+  </Applications>
+
+  <Capabilities>
+    <rescap:Capability Name="runFullTrust" />
+  </Capabilities>
+</Package>

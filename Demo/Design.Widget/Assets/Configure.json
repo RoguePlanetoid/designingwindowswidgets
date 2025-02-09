@@ -1,0 +1,49 @@
+{
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "type": "AdaptiveCard",
+  "version": "1.6",
+  "body": [
+    {
+      "id": "Template",
+      "type": "Input.Text",
+      "placeholder": "Card Template",
+      "isMultiline": true,
+      "height": "stretch",
+      "value": "${Template}"
+    },
+    {
+      "id": "Data",
+      "type": "Input.Text",
+      "placeholder": "Card Data",
+      "isMultiline": true,
+      "height": "stretch",
+      "value": "${Data}"
+    },
+    {
+      "type": "ActionSet",
+      "actions": [
+        {
+          "type": "Action.Execute",
+          "title": "Save",
+          "verb": "save"
+        },
+        {
+          "type": "Action.Execute",
+          "title": "Reset",
+          "verb": "reset"
+        },
+        {
+          "type": "Action.Execute",
+          "title": "Close",
+          "verb": "close"
+        }
+      ]
+    },
+    {
+      "type": "TextBlock",
+      "text": "${Error}",
+      "color": "Attention",
+      "horizontalAlignment": "Center"
+    }
+  ]
+}
